@@ -1,0 +1,134 @@
+// 学生类 学生对象
+public class Student {
+    // 学号
+    private int No;
+
+    // 姓名
+    private String Name;
+
+    // 生日
+    private String Birth;
+
+    // 性别
+    private String Gender;
+
+    // 手机号
+    private String Phone;
+
+    public Student() {
+    }
+
+    public Student(int No, String Name, String Birth, String Gender, String Phone) {
+        this.No = No;
+        this.Name = Name;
+        this.Birth = Birth;
+        this.Gender = Gender;
+        this.Phone = Phone;
+    }
+
+    /**
+     * 获取
+     * @return No
+     */
+    public int getNo() {
+        return No;
+    }
+
+    /**
+     * 设置
+     * @param No
+     */
+    public void setNo(int No) {
+        this.No = No;
+    }
+
+    /**
+     * 获取
+     * @return Name
+     */
+    public String getName() {
+        return Name;
+    }
+
+    /**
+     * 设置
+     * @param Name
+     */
+    public void setName(String Name) {
+        this.Name = Name;
+    }
+
+    /**
+     * 获取
+     * @return Birth
+     */
+    public String getBirth() {
+        return Birth;
+    }
+
+    /**
+     * 设置
+     * @param Birth
+     */
+    public void setBirth(String Birth) {
+        this.Birth = Birth;
+    }
+
+    /**
+     * 获取
+     * @return Gender
+     */
+    public String getGender() {
+        return Gender;
+    }
+
+    /**
+     * 设置
+     * @param Gender
+     */
+    public void setGender(String Gender) {
+        this.Gender = Gender;
+    }
+
+    /**
+     * 获取
+     * @return Phone
+     */
+    public String getPhone() {
+        return Phone;
+    }
+
+    /**
+     * 设置
+     * @param Phone
+     */
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
+    }
+
+    @Override
+    public String toString() {
+        return "学生信息: " +
+                " 学号 = " + this.No +
+                " , 姓名 = " + this.Name +
+                " , 生日 = " + this.Birth +
+                " , 性别 = " + this.Gender +
+                " , 手机号 = " + this.Phone +
+                " ";
+    }
+    @Override
+    public boolean equals(Object obj) { // 判断两个Student对象是否相等, 通过相同学号进行判断
+        if (obj == null) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof Student) {
+            Student student = (Student) obj;
+            // 如果学号一样, 则表示同一个学生
+            return this.No == student.No;
+        }
+        return false;
+    }
+}
